@@ -1,0 +1,18 @@
+.hotel-container {
+  display: flex;
+  gap: 20px;
+  margin: 2rem 0;
+}
+
+.btn-book {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffc107;
+  color: navy;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
