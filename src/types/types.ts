@@ -1,5 +1,6 @@
 export type HotelDataType = {
     name: string;
+    image: any;
     location: string;
     stars: number[];
     persons: string;

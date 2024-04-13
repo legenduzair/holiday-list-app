@@ -1,8 +1,13 @@
 import { HotelData } from "../types/types";
+import hotelOneImage from "../assets/hotel-image-1.png";
+import hotelTwoImage from "../assets/hotel-image-2.png";
+import hotelThreeImage from "../assets/hotel-image-3.png";
+
 
 export const hotelData: HotelData = [
   {
     name: "Iberostar Grand Salome",
+    image: hotelOneImage,
     location: "Costa Adeje, Tenerife",
     stars: new Array(5).fill(1),
     persons: "2 Adults, 2 children & 1 infant",
@@ -14,6 +19,7 @@ export const hotelData: HotelData = [
   },
   {
     name: "Aguamarina Golf Hotel",
+    image: hotelTwoImage,
     location: "Costa Adeje, Tenerife",
     stars: new Array(4).fill(1),
     persons: "2 Adults, 1 child",
@@ -25,6 +31,7 @@ export const hotelData: HotelData = [
   },
   {
     name: "Las Piramedes Resort",
+    image: hotelThreeImage,
     location: "Costa Adeje, Tenerife",
     stars: new Array(3).fill(1),
     persons: "2 Adults, 2 children",
