@@ -9,5 +9,10 @@ export const sortHotelsByName = (hotels: HotelData): HotelData => {
 
 // Sort by Price (Ascending)
 export const sortHotelsByPrice = (hotels: HotelData): HotelData => {
-    return [...hotels].sort((a, b) => a.price - b.price);
-  };
+  return [...hotels].sort((a, b) => a.price - b.price);
+};
+
+// Sort by Star Rating (Descending)
+export const sortHotelsByRating = (hotels: HotelData): HotelData => {
+  return [...hotels].sort((a, b) => b.rating - a.rating);
+};

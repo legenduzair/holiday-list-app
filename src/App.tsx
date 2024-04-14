@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Filters from "./components/Filters/Filters";
 import Hotel from "./components/Hotel/Hotel";
 import { hotelData } from "./constants/hotelData";
 import "./index.css";
 import { HotelData, HotelDataType } from "./types/types";
-import { sortHotelsByName, sortHotelsByPrice } from "./utils/utils";
+import { sortHotelsByName, sortHotelsByPrice, sortHotelsByRating } from "./utils/utils";
 
 function App() {
   const [hotels, setHotels] = useState<HotelData>(hotelData);
+
+  useEffect(() => {
+    const sortedHotelsByPrice = sortHotelsByPrice(hotels);
+        setHotels(sortedHotelsByPrice);
+  }, [])
+  
 
   const handleFilterChange = (filter: string) => {
     switch (filter) {
@@ -18,6 +24,10 @@ function App() {
       case "price":
         const sortedHotelsByPrice = sortHotelsByPrice(hotels);
         setHotels(sortedHotelsByPrice);
+        break;
+      case "starRating":
+        const sortedHotelsByRating = sortHotelsByRating(hotels);
+        setHotels(sortedHotelsByRating);
         break;
       default:
         break;
