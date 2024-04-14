@@ -10,7 +10,7 @@ type FilterHighlightProps = {
 const Filters = ({ onFilterChange }: any) => {
   const [highlightedFilters, setHighlightedFilters] = useState<FilterHighlightProps>({
     alphabetical: false,
-    price: false,
+    price: true,
     starRating: false,
   });
 
@@ -36,7 +36,7 @@ const Filters = ({ onFilterChange }: any) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          fill="grey"
+          fill={highlightedFilters.alphabetical ? "white" : "grey"}
           width={20}
           height={20}
         >
@@ -51,7 +51,7 @@ const Filters = ({ onFilterChange }: any) => {
         <svg
           xmlns="http://www.w3.org/2000s/svg"
           viewBox="0 0 24 24"
-          fill="grey"
+          fill={highlightedFilters.price ? "white" : "grey"}
           width={20}
           height={20}
         >
@@ -70,7 +70,7 @@ const Filters = ({ onFilterChange }: any) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          fill="grey"
+          fill={highlightedFilters.starRating ? "white" : "grey"}
           width={20}
           height={20}
         >
