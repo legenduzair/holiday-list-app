@@ -19,3 +19,8 @@
     float: right;
     padding-right: 10px;
 }
+
+.filters-container button.active {
+    background-color: navy;
+    color: white;
+}

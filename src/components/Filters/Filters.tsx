@@ -1,13 +1,37 @@
 import { useState } from "react";
 import "./filters.css";
 
+type FilterHighlightProps = {
+  alphabetical: boolean,
+  price: boolean,
+  starRating: boolean,
+}
+
 const Filters = ({ onFilterChange }: any) => {
-  const handleFilterChange = (filter: any) => {
+  const [highlightedFilters, setHighlightedFilters] = useState<FilterHighlightProps>({
+    alphabetical: false,
+    price: false,
+    starRating: false,
+  });
+
+  const handleFilterChange = (filter: string) => {
+
+    const newHighlightedFilters = {
+      alphabetical: filter === "alphabetical",
+      price: filter === "price",
+      starRating: filter === "starRating",
+    };
+
+    setHighlightedFilters(newHighlightedFilters);
     onFilterChange(filter);
   };
+
   return (
     <div className="filters-container">
-      <button onClick={() => handleFilterChange("alphabetical")}>
+      <button
+        className={highlightedFilters.alphabetical ? "active" : ""}
+        onClick={() => handleFilterChange("alphabetical")}
+      >
         sort <strong>alphabetically</strong>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -19,10 +43,13 @@ const Filters = ({ onFilterChange }: any) => {
           <path d="M18.75 12.75h1.5a.75.75 0 0 0 0-1.5h-1.5a.75.75 0 0 0 0 1.5ZM12 6a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 12 6ZM12 18a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 12 18ZM3.75 6.75h1.5a.75.75 0 1 0 0-1.5h-1.5a.75.75 0 0 0 0 1.5ZM5.25 18.75h-1.5a.75.75 0 0 1 0-1.5h1.5a.75.75 0 0 1 0 1.5ZM3 12a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 3 12ZM9 3.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5ZM12.75 12a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0ZM9 15.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z" />
         </svg>
       </button>
-      <button onClick={() => handleFilterChange("price")}>
+      <button
+        className={highlightedFilters.price ? "active" : ""}
+        onClick={() => handleFilterChange("price")}
+      >
         sort by <strong>price</strong>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000s/svg"
           viewBox="0 0 24 24"
           fill="grey"
           width={20}
@@ -35,7 +62,10 @@ const Filters = ({ onFilterChange }: any) => {
           />
         </svg>
       </button>
-      <button onClick={() => handleFilterChange("starRating")}>
+      <button
+        className={highlightedFilters.starRating ? "active" : ""}
+        onClick={() => handleFilterChange("starRating")}
+      >
         sort by <strong>star rating</strong>
         <svg
           xmlns="http://www.w3.org/2000/svg"

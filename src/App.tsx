@@ -4,16 +4,19 @@ import Hotel from "./components/Hotel/Hotel";
 import { hotelData } from "./constants/hotelData";
 import "./index.css";
 import { HotelData, HotelDataType } from "./types/types";
-import { sortHotelsByName, sortHotelsByPrice, sortHotelsByRating } from "./utils/utils";
+import {
+  sortHotelsByName,
+  sortHotelsByPrice,
+  sortHotelsByRating,
+} from "./utils/utils";
 
 function App() {
   const [hotels, setHotels] = useState<HotelData>(hotelData);
 
   useEffect(() => {
     const sortedHotelsByPrice = sortHotelsByPrice(hotels);
-        setHotels(sortedHotelsByPrice);
-  }, [])
-  
+    setHotels(sortedHotelsByPrice);
+  }, []);
 
   const handleFilterChange = (filter: string) => {
     switch (filter) {
