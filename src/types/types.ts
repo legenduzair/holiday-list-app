@@ -2,7 +2,7 @@ export type HotelDataType = {
     name: string;
     image: any;
     location: string;
-    stars: number[];
+    rating: number;
     persons: string;
     dates: string;
     airport: string;

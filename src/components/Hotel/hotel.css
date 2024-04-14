@@ -37,11 +37,13 @@
 }
 
 .hotel-description h4 {
+  color: navy;
   margin: 0;
 }
 
 .hotel-details h2 {
   color: navy;
+  margin-bottom: 10px;
 }
 
 .hotel-details small {

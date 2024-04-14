@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { HotelDataType } from "../../types/types";
+import StarRating from "../Rating/StarRating";
 import "./hotel.css";
 
 type HotelDataProps = {
@@ -28,7 +29,6 @@ const Hotel = ({ data }: HotelDataProps) => {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="w-6 h-6"
                   width={20}
                   height={20}
                 >
@@ -46,7 +46,6 @@ const Hotel = ({ data }: HotelDataProps) => {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="w-6 h-6"
                   width={20}
                   height={20}
                 >
@@ -63,7 +62,7 @@ const Hotel = ({ data }: HotelDataProps) => {
         <div className="hotel-details">
           <h2>{data.name}</h2>
           <small>{data.location}</small>
-          <p>stars</p>
+          <StarRating rating={data.rating} />
           <p>{data.persons}</p>
           <p>{data.dates}</p>
           <p>{data.airport}</p>
