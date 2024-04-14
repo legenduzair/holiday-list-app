@@ -1,11 +1,16 @@
+import { useState } from 'react';
 import './filters.css'
 
-const Filters = () => {
+const Filters = ({ onFilterChange }: any) => {
+  
+  const handleFilterChange = (filter: any) => {
+    onFilterChange(filter);
+  }
   return (
     <div className='filters-container'>
-        <div>sort alphabetically</div>
-        <div>sort by price</div>
-        <div>sort by star rating</div>
+        <button onClick={() => handleFilterChange('alphabetical')}>sort alphabetically</button>
+        <button onClick={() => handleFilterChange('price')}>sort by price</button>
+        <button onClick={() => handleFilterChange('starRating')}>sort by star rating</button>
     </div>
   )
 }
