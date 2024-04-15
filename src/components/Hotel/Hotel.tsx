@@ -5,9 +5,10 @@ import "./hotel.css";
 
 type HotelDataProps = {
   data: HotelDataType;
+  'data-testid': string;
 };
 
-const Hotel = ({ data }: HotelDataProps) => {
+const Hotel = ({ 'data-testid': testId, data }: HotelDataProps) => {
   const [showMore, setShowMore] = useState(true);
   const [showDescription, setShowDescription] = useState(false);
 
@@ -17,7 +18,7 @@ const Hotel = ({ data }: HotelDataProps) => {
   };
 
   return (
-    <section className="hotel">
+    <section data-testid={testId} className="hotel">
       <div className="hotel-container">
         <div className="hotel-image">
           <img src={data.image} alt={data.name} />

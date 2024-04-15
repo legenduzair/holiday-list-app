@@ -31,6 +31,7 @@ const Filters = ({ onFilterChange }: any) => {
       <button
         className={highlightedFilters.alphabetical ? "active" : ""}
         onClick={() => handleFilterChange("alphabetical")}
+        data-testid="sort-alphabetical"
       >
         sort <strong>alphabetically</strong>
         <svg
@@ -46,6 +47,7 @@ const Filters = ({ onFilterChange }: any) => {
       <button
         className={highlightedFilters.price ? "active" : ""}
         onClick={() => handleFilterChange("price")}
+        data-testid="sort-price"
       >
         sort by <strong>price</strong>
         <svg
@@ -65,6 +67,7 @@ const Filters = ({ onFilterChange }: any) => {
       <button
         className={highlightedFilters.starRating ? "active" : ""}
         onClick={() => handleFilterChange("starRating")}
+        data-testid="sort-rating"
       >
         sort by <strong>star rating</strong>
         <svg

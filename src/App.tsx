@@ -41,8 +41,8 @@ function App() {
     <section className="container">
       <Filters onFilterChange={handleFilterChange} />
       <div className="hotel-list">
-        {hotels.map((data: HotelDataType) => (
-          <Hotel key={data.name} data={data} />
+        {hotels.map((data: HotelDataType, index: number) => (
+          <Hotel key={data.name} data={data} data-testid={`hotel-${index}`} />
         ))}
       </div>
     </section>
