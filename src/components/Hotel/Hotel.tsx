@@ -5,13 +5,14 @@ import "./hotel.css";
 
 type HotelDataProps = {
   data: HotelDataType;
-  'data-testid': string;
+  "data-testid": string;
 };
 
-const Hotel = ({ 'data-testid': testId, data }: HotelDataProps) => {
+const Hotel = ({ "data-testid": testId, data }: HotelDataProps) => {
   const [showMore, setShowMore] = useState(true);
   const [showDescription, setShowDescription] = useState(false);
 
+  // Funtion to toggle description
   const toggleDescription = () => {
     setShowMore(!showMore);
     setShowDescription(!showDescription);

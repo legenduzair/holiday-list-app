@@ -2,20 +2,21 @@ import { useState } from "react";
 import "./filters.css";
 
 type FilterHighlightProps = {
-  alphabetical: boolean,
-  price: boolean,
-  starRating: boolean,
-}
+  alphabetical: boolean;
+  price: boolean;
+  starRating: boolean;
+};
 
 const Filters = ({ onFilterChange }: any) => {
-  const [highlightedFilters, setHighlightedFilters] = useState<FilterHighlightProps>({
-    alphabetical: false,
-    price: true,
-    starRating: false,
-  });
+  const [highlightedFilters, setHighlightedFilters] =
+    useState<FilterHighlightProps>({
+      alphabetical: false,
+      price: true,
+      starRating: false,
+    });
 
+  // Function to highlight filter when active and pass filter details for its functionality
   const handleFilterChange = (filter: string) => {
-
     const newHighlightedFilters = {
       alphabetical: filter === "alphabetical",
       price: filter === "price",

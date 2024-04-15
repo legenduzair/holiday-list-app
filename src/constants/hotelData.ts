@@ -3,7 +3,7 @@ import hotelOneImage from "../assets/hotel-image-1.png";
 import hotelTwoImage from "../assets/hotel-image-2.png";
 import hotelThreeImage from "../assets/hotel-image-3.png";
 
-
+// Hotel Data
 export const hotelData: HotelData = [
   {
     name: "Iberostar Grand Salome",
@@ -25,7 +25,7 @@ export const hotelData: HotelData = [
     persons: "2 Adults, 1 child",
     dates: "27th May 2019 for 7 days",
     airport: "departing from Liverpool",
-    price: 686.80,
+    price: 686.8,
     description:
       "The 4-star Alua Atlantico Golf Hotel San Miguel de Abona is 10 minutes' drive away Alborada Beach Club and features a cash machine and a lift onsite. Providing access to such entertainment venues as Marina San Miguel merely 12 minutes' walk away, this San Miguel de Abona hotel has 4 restaurants.",
   },

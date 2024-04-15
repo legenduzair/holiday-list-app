@@ -1,4 +1,3 @@
-import React from "react";
 import './ratings.css';
 
 type ratingProps = {

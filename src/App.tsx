@@ -13,11 +13,13 @@ import {
 function App() {
   const [hotels, setHotels] = useState<HotelData>(hotelData);
 
+  // Sort Hotels by price on component mount
   useEffect(() => {
     const sortedHotelsByPrice = sortHotelsByPrice(hotels);
     setHotels(sortedHotelsByPrice);
   }, []);
 
+  // Sort filter switch case
   const handleFilterChange = (filter: string) => {
     switch (filter) {
       case "alphabetical":
