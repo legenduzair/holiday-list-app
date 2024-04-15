@@ -65,8 +65,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
 .btn-book span {
